@@ -14,7 +14,7 @@
 
 *** 此模块包括 ***
 
->detect
+>`detect`
 >>detect_front()  
 >>detect_eye()  
 >>img_detect_front()  
