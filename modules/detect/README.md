@@ -2,7 +2,7 @@
 
   **版本**   | **兼容性** | **更新日期**
   ----      | -----      | ------
-  v1.0      | windows    | 2018-10-26
+  `v1.0`    | windows    | 2018-10-26
 
 ### 此模块存在的问题：  
 在使用此模块之前需要对此模块进行环境变量配置  
@@ -15,10 +15,10 @@
 *** 此模块包括 ***
 
 >`detect`
->>detect_front()  
->>detect_eye()  
->>img_detect_front()  
->>img_detect_eye()  
+>>detect_front()：`调用摄像头进行正脸检测`  
+>>detect_eye()：`调用摄像头进行眼部检测`  
+>>img_detect_front(filename)：`输入图像，对图像中的人进行正脸检测`  
+>>img_detect_eye(filename)：`输入图像，对图像中的人进行眼部检测`  
 
 **此模块的使用方法：**
 
