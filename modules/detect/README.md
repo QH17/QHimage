@@ -15,10 +15,10 @@
 *** 此模块包括 ***
 
 >detect
->>detect_front()
->>detect_eye()
->>img_detect_front()
->>img_detect_eye()
+>>detect_front()  
+>>detect_eye()  
+>>img_detect_front()  
+>>img_detect_eye()  
 
 **此模块的使用方法：**
 
