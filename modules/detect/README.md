@@ -22,6 +22,7 @@
 2.向.py文件中导入该模块
 
 ```
+@Override
 import detect
 
 detect.detect_front()
