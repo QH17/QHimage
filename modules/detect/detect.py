@@ -5,7 +5,7 @@ import cv2
 def img_detect_front(filename):
 
     #将人脸识别的区域设定为正脸
-    face_cascade=cv2.CascadeClassifier('haarcascade_frontalface_default.xml')
+    face_cascade=cv2.CascadeClassifier('detect\\haarcascade_frontalface_default.xml')
     #读取filename中的图像
     img=cv2.imread(filename)
     gray=cv2.cvtColor(img,cv2.COLOR_BGR2GRAY)
@@ -32,7 +32,7 @@ def img_detect_front(filename):
 def img_detect_eye(filename):
 
     #将人脸识别区域设置为眼部
-    eye_cascade=cv2.CascadeClassifier('haarcascade_eye.xml')
+    eye_cascade=cv2.CascadeClassifier('detect\\haarcascade_eye.xml')
     #读取图像
     img=cv2.imread(filename)
     #转换为灰度图
@@ -60,7 +60,7 @@ def img_detect_eye(filename):
 def detect_front():
     
     #人像识别区域：正脸
-    face_cascade = cv2.CascadeClassifier('haarcascade_frontalface_default.xml')
+    face_cascade = cv2.CascadeClassifier('detect\\haarcascade_frontalface_default.xml')
     #eye_cascade = cv2.CascadeClassifier('A:/python/cascade/haarcascade_eye.xml')
     
     #开启编号为0的摄像头
@@ -96,7 +96,7 @@ def detect_front():
 
 def detect_eye():
 
-    eye_cascade = cv2.CascadeClassifier('haarcascade_eye.xml')
+    eye_cascade = cv2.CascadeClassifier('detect\\haarcascade_eye.xml')
      #开启编号为0的摄像头
     camera = cv2.VideoCapture(0)
 
