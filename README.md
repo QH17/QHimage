@@ -13,9 +13,7 @@
 
 c1              | c2                    | c3 
 ----            | -----                 | ------
-[cv2.imread()](https://github.com/QH17/QHimage/blob/master/task1-3/c1/CV2_imshow.py)            |
-[cv2.bilateralFilter()](https://github.com/QH17/QHimage/blob/master/task1-3/c1/CV2_imshow.py)   |
-[cv2.circle()](https://github.com/QH17/QHimage/blob/master/task1-3/c1/CV2_imwrite.py)
+[cv2.imread()](https://github.com/QH17/QHimage/blob/master/task1-3/c1/CV2_imshow.py) | [cv2.bilateralFilter()](https://github.com/QH17/QHimage/blob/master/task1-3/c1/CV2_imshow.py)   | [cv2.circle()](https://github.com/QH17/QHimage/blob/master/task1-3/c1/CV2_imwrite.py)
 cv2.imshow()    | cv2.blur()            |  cv2.rectangle()
 cv2.cvtColor()  | cv2.boxFilter()       |  cv2.inrange()
 cv2.imwrite()   | cv2.MidianBlur()      |  cv2.find_Contours()
