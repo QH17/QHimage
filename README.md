@@ -14,7 +14,7 @@ c1              | c2                    | c3
 cv2.imread()    | cv2.bilateralFilter() |  cv2.circle()
 cv2.imshow()    | cv2.blur()            |  cv2.rectangle()
 cv2.cvtColor()  | cv2.boxFilter()       |  cv2.inrange()
-cv2.imwrite()   | cv2.MidianBlur()      | cv2.find_Contours()
-| cv2.Canny()           | 
-| cv2.erode()           |
+cv2.imwrite()   | cv2.MidianBlur()      |  cv2.find_Contours()
+---             | cv2.Canny()           |  ---
+---             | cv2.erode()           |  ---
 
