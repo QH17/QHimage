@@ -20,4 +20,4 @@ cv2.imwrite()   | cv2.MidianBlur()      |  cv2.find_Contours()
 ---             | cv2.Canny()           |  ---
 ---             | cv2.erode()           |  ---
 
-**注意：一些函数共同存在于一个文件中，如imread和imshow等**
+**注意：一些函数共同存在于一个文件中，如imread和imshow,erode和dilate等**
