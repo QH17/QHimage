@@ -16,14 +16,9 @@ c1 | c2 | c3
 c1 | c2 | c3 
 ---- | ----- | ------
 imread | bilateralFilter |  circle
----- | ----- | ------
 imshow | blur |  rectangle
----- | ----- | ------
 cvtColor | boxFilter |  inrange
----- | ----- | ------
 imwrite | MidianBlur | find_Contours
----- | ----- | ------
   | canny | 
----- | ----- | ------
   | erode |
 
