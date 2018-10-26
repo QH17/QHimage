@@ -3,7 +3,9 @@
 
 **文件夹task1-3**
 
-[c1](https://github.com/QH17/QHimage/tree/master/task1-3/c1) | [c2](https://github.com/QH17/QHimage/tree/master/task1-3/c2) | [c3](https://github.com/QH17/QHimage/tree/master/task1-3/c3) 
+[c1](https://github.com/QH17/QHimage/tree/master/task1-3/c1) |
+[c2](https://github.com/QH17/QHimage/tree/master/task1-3/c2) |
+[c3](https://github.com/QH17/QHimage/tree/master/task1-3/c3) 
 ---- | ----- | ------
 图像的读取、写入以及色彩空间的转换 | 图像的滤波操作 | 图像的二值化以及最小外接圆处理
 
