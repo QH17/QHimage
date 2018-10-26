@@ -21,8 +21,7 @@
 
 2.向.py文件中导入该模块
 
-```
-@Override
+```python
 import detect
 
 detect.detect_front()
