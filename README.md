@@ -1,5 +1,5 @@
 # QHimage
-用于起航实验室的图像识别
+起航实验室图像识别组
 
 **文件夹task1-3**
 
@@ -17,4 +17,3 @@ cv2.cvtColor()  | cv2.boxFilter()       |  cv2.inrange()
 cv2.imwrite()   | cv2.MidianBlur()      |  cv2.find_Contours()
 ---             | cv2.Canny()           |  ---
 ---             | cv2.erode()           |  ---
-
