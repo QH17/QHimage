@@ -32,5 +32,5 @@ modules 用于存放已经封装好的模块
 
  模块 | 版本 | 发布日期 
  --- | ---- | ----- 
- detect | `v1.0.8` | 2018-10-27 
+ [detect](https://github.com/QH17/QHimage/tree/master/modules/detect) | `v1.0.8` | 2018-10-27 
  
