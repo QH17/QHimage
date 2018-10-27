@@ -21,6 +21,6 @@
 
   模块 | 功能  
   --- | ----
-  [detect](https://github.com/QH17/QHimage/tree/master/modules/detect) | 实现人物正脸检测和眼部检测（图像/视频） 
+  [detect](https://github.com/QH17/QHimage/tree/master/modules/detect) | 与人物检测相关（图像/视频） 
   
   
