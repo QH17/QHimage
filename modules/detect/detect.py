@@ -3,7 +3,9 @@ import cv2
 ##################################################################################################
 #用于检测正脸的函数
 def img_detect_front(filename):
-
+    """
+    import array:image contains front faces.
+    """
     #将人脸识别的区域设定为正脸
     face_cascade=cv2.CascadeClassifier('detect\\haarcascade_frontalface_default.xml')
     #读取filename中的图像
@@ -30,7 +32,9 @@ def img_detect_front(filename):
 
 #用于检测眼部的函数
 def img_detect_eye(filename):
-
+    """
+    import array:image contains eyes.
+    """
     #将人脸识别区域设置为眼部
     eye_cascade=cv2.CascadeClassifier('detect\\haarcascade_eye.xml')
     #读取图像
@@ -52,20 +56,18 @@ def img_detect_eye(filename):
     cv2.imshow('eyes Detected!',img)
     cv2.waitKey(0)
 
-#img_detect_eye(filename)
-
 ####################################################################################################
 #                                 读取视频中的人像信息                                               #
 ####################################################################################################
-def detect_front():
-    
+def detect_front(cap_num = 0):
+    """
+    detect_front(cap_num)
+    cap_num: select an video path. (default 0)
+    """
     #人像识别区域：正脸
-    face_cascade = cv2.CascadeClassifier('detect\\haarcascade_frontalface_default.xml')
-    #eye_cascade = cv2.CascadeClassifier('A:/python/cascade/haarcascade_eye.xml')
-    
+    face_cascade = cv2.CascadeClassifier('detect\\haarcascade_frontalface_default.xml')    
     #开启编号为0的摄像头
-    camera = cv2.VideoCapture(0)
-
+    camera = cv2.VideoCapture(cap_num)
     #进入循环
     while True:
         #读取摄像头的帧
@@ -73,7 +75,6 @@ def detect_front():
         gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
         #检测面部信息
         faces = face_cascade.detectMultiScale(gray, 1.8, 5)
-        #eyes  = eye_cascade.detectMultiScale(gray,1.5,5,0,(40,40))
 
         #如果面部信息不存在
         if faces == ():
@@ -83,22 +84,20 @@ def detect_front():
         for(x,y,w,h) in faces:
             img = cv2.rectangle(frame,(x,y),(x+w,y+h),(255,0,0),10)
         
-        #for (ex,ey,ew,eh) in eyes:
-        #    img = cv2.rectangle(frame,(ex,ey),(ex+ew,ey+eh),(0,255,0),2)
-
         #将图像打印出来
-        cv2.imshow("faces Detected!",img)
+        cv2.imshow("frontface Mode",img)
         cv2.waitKey(1)
-
-#vdo_detect_front()
 
 ####################################################################################################
 
-def detect_eye():
-
+def detect_eye(cap_num = 0):
+    """
+    detect_eye(cap_num)
+    cap_num: select an video path. (default 0)
+    """
     eye_cascade = cv2.CascadeClassifier('detect\\haarcascade_eye.xml')
      #开启编号为0的摄像头
-    camera = cv2.VideoCapture(0)
+    camera = cv2.VideoCapture(cap_num)
 
     #进入循环
     while True:
@@ -117,6 +116,94 @@ def detect_eye():
             img = cv2.rectangle(frame,(ex,ey),(ex+ew,ey+eh),(0,255,0),2)
 
         #将图像打印出来
-        cv2.imshow("faces Detected!",img)
+        cv2.imshow("eyes Mode",img)
         cv2.waitKey(1)
 ####################################################################################################
+#                                 读取视频中的全身信息                                               #
+####################################################################################################
+def detect_fullbody(cap_num = 0):
+    """
+    detect_fullbody(cap_num)
+    cap_num: select an video path. (default 0)
+    """
+    #人像识别区域：正脸
+    face_cascade = cv2.CascadeClassifier('detect\\haarcascade_fullbody.xml')    
+    #开启编号为0的摄像头
+    camera = cv2.VideoCapture(cap_num)
+    #进入循环
+    while True:
+        #读取摄像头的帧
+        ret, frame = camera.read()
+        gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
+        #检测面部信息
+        body = face_cascade.detectMultiScale(gray, 1.8, 5)
+        #如果面部信息不存在
+        if body == ():
+            img = frame
+        
+        #若面部信息存在
+        for(x,y,w,h) in body:
+            img = cv2.rectangle(frame,(x,y),(x+w,y+h),(255,0,0),10)
+
+        #将图像打印出来
+        cv2.imshow("fullbody Mode",img)
+        cv2.waitKey(1)
+####################################################################################################
+#                                 读取视频中的人像上半身信息                                         #
+####################################################################################################
+def detect_upperbody(cap_num = 0):
+    """
+    detect_upperbody(cap_num)
+    cap_num: select an video path. (default 0)
+    """
+    #人像识别区域：正脸
+    face_cascade = cv2.CascadeClassifier('detect\\haarcascade_upperbody.xml')    
+    #开启编号为0的摄像头
+    camera = cv2.VideoCapture(cap_num)
+    #进入循环
+    while True:
+        #读取摄像头的帧
+        ret, frame = camera.read()
+        gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
+        #检测面部信息
+        body = face_cascade.detectMultiScale(gray, 1.8, 5)
+        #如果面部信息不存在
+        if body == ():
+            img = frame
+        
+        #若面部信息存在
+        for(x,y,w,h) in body:
+            img = cv2.rectangle(frame,(x,y),(x+w,y+h),(255,0,0),10)
+
+        #将图像打印出来
+        cv2.imshow("upperbody Mode",img)
+        cv2.waitKey(1)
+########################################################################################
+def detect_lowerbody(cap_num = 0):
+    """
+    detect_lowerbody(cap_num)
+    cap_num: select an video path. (default 0)
+    """
+    #人像识别区域：正脸
+    face_cascade = cv2.CascadeClassifier('detect\\haarcascade_lowerbody.xml')    
+    #开启编号为0的摄像头
+    camera = cv2.VideoCapture(cap_num)
+    #进入循环
+    while True:
+        #读取摄像头的帧
+        ret, frame = camera.read()
+        gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
+        #检测面部信息
+        faces = face_cascade.detectMultiScale(gray, 1.8, 5)
+
+        #如果面部信息不存在
+        if faces == ():
+            img = frame
+        
+        #若面部信息存在
+        for(x,y,w,h) in faces:
+            img = cv2.rectangle(frame,(x,y),(x+w,y+h),(255,0,0),10)
+        
+        #将图像打印出来
+        cv2.imshow("lowerbody Mode",img)
+        cv2.waitKey(1)
