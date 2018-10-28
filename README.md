@@ -1,7 +1,9 @@
 # QHimage
 起航实验室图像识别组
 
-**文件夹task1-3**
+**Python**
+
+***task1-3中涉及到的函数**
 
 [c1](https://github.com/QH17/QHimage/tree/master/task1-3/c1) |
 [c2](https://github.com/QH17/QHimage/tree/master/task1-3/c2) |
@@ -9,15 +11,23 @@
 ---- | ----- | ------
 图像的读取、写入以及色彩空间的转换 | 图像的滤波操作 | 图像的二值化以及最小外接圆处理
 
-**task1-3中涉及到的函数**
+***modules**
+图像及视频中人的正脸检测与眼部检测。
 
-c1              | c2                    | c3 
-----            | -----                 | ------
-cv2.imread()    | cv2.bilateralFilter() |  cv2.circle()
-cv2.imshow()    | cv2.blur()            |  cv2.rectangle()
-cv2.cvtColor()  | cv2.boxFilter()       |  cv2.inrange()
-cv2.imwrite()   | cv2.MidianBlur()      |  cv2.find_Contours()
----             | cv2.Canny()           |  ---
----             | cv2.erode()           |  ---
+[modules](https://github.com/QH17/QHimage/tree/master/Python/modules)
 
-**注意：一些函数共同存在于一个文件中，如imread和imshow,erode和dilate等**
+**Qt**
+
+***经过CMake配置的OpenCV文件**
+可以直接下载使用。
+
+***test1**
+输入半径，求圆面积。
+
+[tese1](https://github.com/QH17/QHimage/tree/master/Qt/Test1)
+
+***OpenCV_QTtest1**
+输入卷积核大小，对实时视频进行均值滤波。
+
+[OpenCV_QTtest1](https://github.com/QH17/QHimage/tree/master/Qt/OpenCV_QTtest1)
+
