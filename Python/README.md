@@ -1,4 +1,4 @@
-# QHimage
+# QHimage/Python
 起航实验室图像识别组  
 
 ----
