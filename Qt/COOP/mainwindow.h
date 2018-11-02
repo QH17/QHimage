@@ -33,6 +33,8 @@ private slots:
 
     void on_actioncanny_C_triggered();
 
+    void on_actioncamera_on_O_triggered();
+
 private:
     Ui::MainWindow *ui;
 };

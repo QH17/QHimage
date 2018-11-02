@@ -107,3 +107,26 @@ void MainWindow::on_actioncanny_C_triggered()
 {
 
 }
+
+void MainWindow::on_actioncamera_on_O_triggered()
+{
+    VideoCapture    capture(0);
+
+       while(1)
+       {
+           Mat frame;
+
+           capture >> frame;
+           imshow("video",frame);
+
+           if(waitKey(1) == 'q')
+           {
+               capture.release();
+
+               destroyAllWindows();
+
+               break;
+           }
+       }
+
+}
