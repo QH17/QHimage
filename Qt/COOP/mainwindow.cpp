@@ -19,19 +19,96 @@ MainWindow::~MainWindow()
 {
     delete ui;
 }
-
+/*******************************************************************************/
+/*读取图像文件
+ *zhang
+*/
 void MainWindow::on_actionimage_P_triggered()
 {
+    Mat     src;
+    QImage  img;
+    QString img_name;
 
+
+    img_name = QFileDialog::getOpenFileName( this, tr("Open Image"),
+                                             ".",tr("Image Files(*.png *.jpg *.jpeg *.bmp)"));
+    //这一段一定要加，防止用户选择图像或视频的时候选到一半改主意。
+    if(img_name.length()<=0)
+    {
+        return;
+    }
+    //读取图像数据，将图像数据转换成UTF8格式
+     src=imread(img_name.toUtf8().data());
+     //通道调整
+     cvtColor( src, src, CV_BGR2RGB );
+     //缩放
+     pyrDown(src,src,Size(src.cols/2,src.rows/2));
+    //缩放（未完成）
+     while(src.cols >= 1000)
+     {
+         pyrDown(src,src,Size(src.cols/2,src.rows/2));
+     }
+
+     img = QImage( (const unsigned char*)(src.data), src.cols, src.rows, QImage::Format_RGB888 );
+     ui->label->setPixmap( QPixmap::fromImage(img));
+     ui->label->resize( ui->label->pixmap()->size());
 }
 
+/*打开视频文件
+ * zhang
+*/
 void MainWindow::on_actionvideo_V_triggered()
 {
+    QString vdo_name;
 
+    vdo_name = QFileDialog::getOpenFileName( this, tr("Open Video"), ".",tr("Video Files(*.avi *.mp4 *.mvb *.rmvb)"));
+    //这一段一定要加，防止用户选择图像或视频的时候选到一半改主意。
+    if(vdo_name.length()<=0)
+    {
+        return;
+    }
+    VideoCapture    cap;
+    cap.open(vdo_name.toUtf8().data());
+
+    while(1)
+    {
+        Mat frame;
+
+        cap >> frame;
+
+        pyrDown(frame,frame,Size(frame.cols/2,frame.rows/2));
+        imshow("video",frame);
+
+        if(waitKey(30) == 'q')
+        {
+            destroyAllWindows();
+            cap.release();
+            break;
+        }
+    }
 }
 
 void MainWindow::on_actionblur_B_triggered()
 {
+    VideoCapture    cap(0);
+
+    while(1)
+    {
+        Mat frame;
+
+        cap >> frame;
+
+        //pyrDown(frame,frame,Size(frame.cols/2,frame.rows/2));
+
+        imshow("video",frame);
+
+        if(waitKey(30) == 'q')
+        {
+            destroyAllWindows();
+            cap.release();
+            break;
+        }
+    }
 
 }
 
