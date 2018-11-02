@@ -90,6 +90,25 @@ void MainWindow::on_actionvideo_V_triggered()
 
 void MainWindow::on_actionblur_B_triggered()
 {
+    VideoCapture    cap(0);
+
+    while(1)
+    {
+        Mat frame;
+
+        cap >> frame;
+
+        //pyrDown(frame,frame,Size(frame.cols/2,frame.rows/2));
+
+        imshow("video",frame);
+
+        if(waitKey(30) == 'q')
+        {
+            destroyAllWindows();
+            cap.release();
+            break;
+        }
+    }
 
 }
 
